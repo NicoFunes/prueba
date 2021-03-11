@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/rails-training
 
     docker:
-      - image: circleci/ruby:2.5.8-stretch-node
+      - image: circleci/ruby:2.5.7-stretch-node
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
@@ -44,7 +44,7 @@ jobs:
 
       - run:
           name: Run Rubocop
-          command: bundle exec rubocop app spec -R --format simple
+          command: bundle exec rubocop app spec --format simple
 
       # Run Tests!
       # - run:
